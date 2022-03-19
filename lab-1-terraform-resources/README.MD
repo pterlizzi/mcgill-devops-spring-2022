@@ -113,7 +113,7 @@ Create a service principal that will be used by Terraform to authenticate to Azu
 #BASH
 export SUBSCRIPTION_ID=$(az account show --query id --output tsv)
 
-az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/${SUBSCRITPION_ID}"
+az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/${SUBSCRIPTION_ID}"
 #PowerShell
 $env:SUBSCRIPTION_ID=(az account show --query id --output tsv
 az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/$env:SUBSCRIPTION_ID"
@@ -168,8 +168,6 @@ git add ~/mcgill-devops-spring-2022/.github/workflows/*
 git commit -m "Adding GitHub Actions Workflow for Resource Group Compliance and Security"
 git push -u origin main
 ```
-
-Inspect your new Github Actions in the Github web UI
 
 ## Creating Azure Resources
 
